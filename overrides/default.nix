@@ -2779,14 +2779,6 @@ lib.composeManyExtensions [
         }
       );
 
-
-      # Stop infinite recursion by using bootstrapped pkg from nixpkgs
-      bootstrapped-pip = super.bootstrapped-pip.override {
-        wheel = ((if self.python.isPy2 then pkgs.python2 else pkgs.python3).pkgs.override {
-          python = self.python;
-        }).wheel;
-      };
-
       watchfiles =
         let
           # Watchfiles does not include Cargo.lock in tarball released on PyPi for versions up to 0.17.0
@@ -2856,16 +2848,6 @@ lib.composeManyExtensions [
           ];
         }
       );
-
-      wheel = ((
-        pkgs.python3.pkgs.override {
-          python = self.python;
-        }
-      ).wheel.override {
-        inherit (self) buildPythonPackage bootstrapped-pip setuptools;
-      }).overrideAttrs (old: {
-        inherit (super.wheel) pname name version src;
-      });
 
       zipp = if super.zipp == null then null else
       super.zipp.overridePythonAttrs (
