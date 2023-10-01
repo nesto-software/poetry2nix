@@ -852,6 +852,7 @@
   "bugz": ["setuptools"],
   "bugzilla": ["setuptools"],
   "buienradar": ["setuptools"],
+  "build": ["flit-core"],
   "buildbot": ["setuptools"],
   "buildbot-full": ["setuptools"],
   "buildbot-pkg": ["setuptools"],
