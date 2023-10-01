@@ -2605,6 +2605,7 @@
   "inquirer": ["poetry-core", "setuptools"],
   "insegel": ["setuptools"],
   "insights-core": ["setuptools"],
+  "installer": ["flit-core"],
   "insteon-frontend-home-assistant": ["setuptools"],
   "intake": ["setuptools"],
   "intake-parquet": ["setuptools"],
