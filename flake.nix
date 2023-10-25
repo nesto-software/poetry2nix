@@ -105,6 +105,8 @@
           };
         };
 
+        legacyPackages = poetry2nix;
+
         apps = {
           inherit (pkgs) poetry;
           poetry2nix = flake-utils.lib.mkApp { drv = packages.poetry2nix; };
