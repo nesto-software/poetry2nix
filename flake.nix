@@ -13,7 +13,7 @@
     flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
   };
 
-  outputs = { self, nixpkgs, flake-utils, nix-github-actions }:
+  outputs = { self, nixpkgs, flake-utils, nix-github-actions, flake-compat }:
     {
       overlay = import ./overlay.nix;
 
