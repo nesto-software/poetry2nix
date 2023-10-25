@@ -87,7 +87,7 @@
       in
       rec {
         packages = {
-          poetry2nix = poetry2nix.cli;
+          poetry2nix = poetry2nix;
           default = poetry2nix.cli;
         };
 
