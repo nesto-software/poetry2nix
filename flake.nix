@@ -9,7 +9,9 @@
       url = "github:nix-community/nix-github-actions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
+  
+    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
+  }
 
   outputs = { self, nixpkgs, flake-utils, nix-github-actions }:
     {
