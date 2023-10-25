@@ -106,6 +106,7 @@
         };
 
         legacyPackages = poetry2nix;
+        defaultPackage = poetry2nix;
 
         apps = {
           inherit (pkgs) poetry;
