@@ -88,7 +88,7 @@
       rec {
         packages = {
           poetry2nix = poetry2nix;
-          default = poetry2nix.cli;
+          default = poetry2nix;
         };
 
         devShells = {
