@@ -46,6 +46,7 @@ package_filename = sys.argv[3]
 
 # Parse username and password for this host from the netrc file if given.
 username, password = None, None
+print ("NETRC:" + os.environ["NETRC"])
 if os.environ["NETRC"]:
     netrc_obj = netrc.netrc(os.environ["NETRC"])
     host = urlparse(index_url).netloc
@@ -53,6 +54,7 @@ if os.environ["NETRC"]:
     if ":" in host:
         host = host.split(":")[0]
     username, _, password = netrc_obj.authenticators(host)
+    print(username)
 
 print("Reading index %s" % index_url)
 
